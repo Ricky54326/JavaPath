@@ -64,7 +64,7 @@ public class GUI extends JFrame implements ActionListener, MouseListener {
 
         pathButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String processOutput = runProcess("which java");
+                String processOutput = runProcess("where java");
 
                 //Print out the process's output (DEBUG)
                 String os = System.getProperty("os.name");
@@ -79,6 +79,10 @@ public class GUI extends JFrame implements ActionListener, MouseListener {
 
                 if(!processOutput.isEmpty()) {
                     javax.swing.JOptionPane.showMessageDialog(null, ("You already have Java: " + processOutput));
+                }
+
+                if(os.equals("Windows 8")){
+                    javax.swing.JOptionPane.showMessageDialog(null, "Windows 8, lel");
                 }
 
                 else{
@@ -99,9 +103,7 @@ public class GUI extends JFrame implements ActionListener, MouseListener {
 
         //Create the processbuilder, run "Which java" for now, will change to OS-specific later
         ProcessBuilder pb = new ProcessBuilder(commands);
-        //TODO: ALL OF THIS BELOW
-        //TODO: Apparently for windows, it's either "c:\> for %i in (java.exe) do @echo.   %~$PATH:i" or "where java"
-        //TODO: Then, set Path = <java path> / bin
+        //TODO: Linux
 
         Process p;
         String processOutput = "";
