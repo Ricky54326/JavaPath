@@ -38,7 +38,7 @@ public class GUI extends JFrame implements ActionListener, MouseListener {
      * RectangleGUI default constructor
      */
     public GUI() {
-        super("Java Path Tool by Naquadah");
+        super("Java Path Tool by Ricky54326");
         setUpWindow();
     }
 
